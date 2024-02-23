@@ -3,7 +3,7 @@
     "manifest_version": 3,
     "name": "Hudgi's Gmail Fixer",
     "description": "Removes all Unicode Zero Width Spaces (#8203; u200B) from the email body text.",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "background": {
         "service_worker": "background.js"
     },
@@ -12,7 +12,11 @@
         "default_icon": "icon.png"
     },
     "permissions": [
-        "notifications"
+        "notifications",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://mail.google.com/"
     ],
     "content_scripts": [
         {
