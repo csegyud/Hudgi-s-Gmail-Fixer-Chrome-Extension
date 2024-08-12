@@ -6,9 +6,15 @@ function LoadHandler() {
         iconUrl: "icon.png"
     };
     var notification = chrome.notifications.create('loaded', opt, callback);
-    notification.show();
+    setTimeout(() => {
+        if (notification) {
+            notification.show();
+        }
+    }, 1000);
 }
 
 function callback() { }
 
-LoadHandler();
+setTimeout(function () {
+    LoadHandler();
+}, 5000);
